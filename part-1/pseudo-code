@@ -1,0 +1,38 @@
+pseudo-code of algorithm
+
+operation: Store all courses in a list.
+courses => [cs1, cs2, cs3, cs4, cs5, ......]
+
+operation: Store course which requires another course
+dictionary1 => {cs4:[cs2], cs5:[cs4], cs6:[cs1,cs3], ..... }
+
+operation: Store course required by another course (course as key and required by course as value)
+dictionary2 => {cs2:cs4, cs4:cs5, cs1:cs6, cs3:cs6, ......}
+
+operation: Store course's number of occurence as value in above dictionary.
+course_counter => {cs4:1, cs5:1, cs6:2, .......}
+
+operation: loop through all courses and find course which requires no other course and put those courses in first semester.
+for n in courses:
+   if n not in dictionary1:
+      first_semester.append(n)
+
+operation: loop through first semester courses and look for their value(array) in dictionary2 to find which course now can be taken in semester 2, as in semester 1 we have covered these courses. Also check if new course require more than 1 course or not. if it requires more than 1 courses then find their counter value if those course is already taken or not (from course_counter). If they are already taken then we can take that course otherwise we cannot take that course and we will decrease course count by 1. Then we will loop through second semester course and then third and so on. Repeat this until no course left.
+all-semester=[first_semester]
+for(minimum number of semester):
+   for course in n-semester:
+      new_course=dictionary2[course]
+      if course_counter[new_course]==0:      
+         sec-semester.append(new_course)
+      else:
+         course_counter[new_course]-=1
+   all-semester.append(sec-semester)
+   n-semester=sec-semester
+
+
+After running the given algorithm, degree requries five semester to complete every course:
+semester 1 => ['cs1', 'cs2', 'cs3']
+semester 2 => ['cs4', 'cs6', 'cs12']
+semester 3 => ['cs5', 'cs7', 'cs13', 'cs14']
+semester 4 => ['cs8', 'cs9', 'cs15']
+semester 5 => ['cs11', 'cs10']

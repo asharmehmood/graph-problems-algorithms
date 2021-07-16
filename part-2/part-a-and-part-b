@@ -1,0 +1,24 @@
+Part a:
+
+Algorithm pseudo-code:
+
+The main idea behind this algorithm is dijkstra algorithm.
+1. Assign each city with index(0,1,2,3,...).
+2. Set capital city index.
+3. Find shortest path from capital to every city with the help of dijkstra algorithm.
+4. Use the equation: (shortest path from city-1 to capital) + (shortest path from capital to city-2) = (shortest path from city-1 to city-2)
+5. To find the shortest path between two cities via capital use the above equation.
+6. To find the path of shortest path, declare a parent variable.
+7. Update the successor of a city with each updation in distance.
+8. At the end, print the parent of each city by moving backward.
+
+
+Part b:
+- .py file is in the directory.
+- Run that file and output will be stored in output file.
+- You can see the shortest path between d to a is d->g->e->a->i with distance of 40.
+- The output in 'output' file for d-i distance is given below:
+	d distance to i via a is: 40
+	Shortest path from d to capital(a) is =>dgea
+	Shortest path from i to capital(a) is =>ia
+

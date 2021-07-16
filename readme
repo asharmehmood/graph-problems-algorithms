@@ -1,0 +1,10 @@
+To run the programs in each part:
+
+- There are two types of file .ipynb and .py.
+- Use .py file.
+- Open the terminal.
+- Write command python3 "filename.py"
+- Files are named as "submission-part-1.py" and "submission-part-2.py".
+- Output is stored in output file.
+
+You must have python 3 installed in your current environment
